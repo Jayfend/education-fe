@@ -15,4 +15,6 @@ export class HomepageComponent {
   homeImg6:any="./assets/Imgs/sitgirl.png"
   homeImg7:any="./assets/Imgs/shoes.png"
   homeImg8:any="./assets/Imgs/Loudspeaker.png"
+  homeImg9:any="./assets/Imgs/standgirl.png"
+  homeImg10:any="./assets/Imgs/girlboy.png"
 }

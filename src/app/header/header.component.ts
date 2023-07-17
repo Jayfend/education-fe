@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  showOption:boolean = false;
   headerImg:any="./assets/Imgs/Frame 8.png"
+  public toggleOption(){
+    this.showOption = this.showOption === true ? false : true;
+ }
 }

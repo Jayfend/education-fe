@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'dela': ['Dela Gothic One','cursive'],
+        'dela': ['Dela Gothic One','sans-serif'],
         'mont':['Montserrat','sans-serif']
       },
     },
@@ -12,6 +12,23 @@ module.exports = {
       'gray':{
         1:'#E0E0E0',
         2:'#BABABA'
+      },
+      'cyan':{
+        1:'#2B788B',
+        2:'#C3DCE3',
+        3:'#5996A5'
+      },
+      'yellow':{
+        1:'#C4A24C'
+      },
+      'orange':{
+        1:'#CB5B43'
+      },
+      'red':{
+        1:'#A95151'
+      },
+      'pink':{
+        1:'#A15993'
       }
     },
     borderWidth:{
@@ -20,14 +37,32 @@ module.exports = {
     textColor:{
       'gray':{
         3:'#757575',
-        4:'#585858'
+        4:'#585858',
+        5:'#828282'
       },
       'cyan':{
         1:'#2B788B',
-        2:'#C3DCE3'
+        2:'#C3DCE3',
+        3:'#5996A5'
       },
       'black':{
         1:'#000000'
+      },
+      'white':{
+        1:'#FFFFFF',
+      },
+      'yellow':{
+        1:'#C4A24C'
+      },
+      'orange':{
+        1:'#CB5B43'
+      },
+      'red':{
+        1:'#A95151'
+      },
+      'pink':{
+        1:'#A15993',
+        2:'#945069'
       }
     },
     backgroundColor:{
@@ -44,6 +79,12 @@ module.exports = {
       'cyan':{
         1:'#2B788B',
         2:'#C3DCE3'
+      },
+      'pink':{
+        1:'#F2D4DC'
+      },
+      'orange':{
+        1:'#CB5B43'
       }
     }
   },

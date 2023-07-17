@@ -1,31 +1,32 @@
 <header>
-  <nav
+  <nav routerLink=""
     class="w-[1920px] h-[88px] px-[370px] py-6 bg-gray-1 border-b-1 border-gray-2 shadow-inner flex justify-between items-center"
   >
     <div class="inline-flex justify-between w-[540px] h-[22px] items-center">
       <div class="inline-flex justify-around items-center">
-        <div class="font-dela text-[20.861px] font-normal mr-[30px]">
+        <div class="font-dela text-[20.861px] font-normal mr-[30px] cursor-pointer">
           GlobalTalk
         </div>
         <div class="border-l-[2px] border-gray-1 mr-[30px] h-[16.865px]"></div>
         <div
-          class="font-mont font-semibold mr-[30px] text-base text-[16px] leading-snug"
+          class="font-mont font-semibold mr-[30px] text-base text-[16px] leading-snug cursor-pointer"
         >
           Home
         </div>
         <div
-          class="font-mont font-semibold mr-[30px] text-base text-[16px] text-gray-3 leading-snug"
+          class="font-mont font-semibold mr-[30px] text-base text-[16px] text-gray-3 leading-snug cursor-pointer"
         >
           Textbook
         </div>
         <div
-          class="font-mont font-semibold mr-[30px] text-base text-[16px] text-gray-3 leading-snug"
+          class="font-mont font-semibold mr-[30px] text-base text-[16px] text-gray-3 leading-snug cursor-pointer"
         >
           Statistics
         </div>
         <div
           class="font-mont font-semibold text-base text-[16px] text-gray-3 leading-snug inline-flex items-center justify-start"
         >
+        <div (mouseenter)="toggleOption()" (mouseleave)="toggleOption()"class="inline-flex items-center cursor-pointer">
           <div>Games</div>
           <img
             title="simple-icon"
@@ -33,13 +34,18 @@
             [src]="headerImg"
           />
         </div>
-       
+          <div *ngIf="this.showOption" class="w-[215px] h-[92px] absolute top-[70px] p-5 bg-white-1 rounded-[14px] shadow flex-col justify-start items-start gap-5 inline-flex">
+            <div class="text-black-1 text-base font-semibold leading-none">Sprint →</div>
+            <div class="text-gray-4 text-base font-semibold leading-none">Audio-call →</div>
+          </div>
+        </div>
+        
       </div>
     </div>
     <div class="inline-flex  items-center w-[197px] h-[40px] ">
         <div class="inline-flex justify-start items-center">
           <div
-            class="w-[41px] h-10 px-3.5 py-[9px] bg-cyan-2 rounded-[100px] justify-center items-center gap-3.5 inline-flex"
+            class="w-[41px] h-10 px-3.5 py-[9px] bg-cyan-2 rounded-[100px] justify-center items-center gap-3.5 inline-flex cursor-pointer"
           >
             <div
               class="text-center text-cyan-1 text-base font-bold leading-snug font-mont"
@@ -47,13 +53,13 @@
               A
             </div>
           </div>
-          <div class="ml-[10px] w-[34px] h-[22px] text-gray-3 font-mont font-semibold">
+          <div class="ml-[10px] w-[34px] h-[22px] text-gray-3 font-mont font-semibold cursor-pointer">
             Alex
           </div>
         </div>
         <div class="inline-flex justify-start items-center h-[40px] ml-[30px]">
           <div
-          class="text-black font-bold leading-none font-mont text-[16px] mt-[3px] whitespace-nowrap"
+          class="text-black font-bold leading-none font-mont text-[16px] mt-[3px] whitespace-nowrap cursor-pointer hover:text-cyan-1 hover:underline"
         >
           Sign Out →
         </div>
