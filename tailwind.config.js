@@ -7,6 +7,19 @@ module.exports = {
         'dela': ['Dela Gothic One','sans-serif'],
         'mont':['Montserrat','sans-serif']
       },
+      keyframes:{
+        timeout:{
+          '0%':{width:'0px', height:'0px', opacity:0},
+          '50%':{width:'0px', height:'0px', opacity:0},
+          '50.1%':{width:'0px', height:'0px', opacity:1},
+          '75%':{width:'500px', height:'0px', opacity:1},
+          '100%':{width:'500px',height:'500px',opacity:1}
+          
+        }
+      },
+      animation:{
+        timeout:'timeout 3s infinite alternate'
+      }
     },
     borderColor:{
       'gray':{
@@ -38,7 +51,8 @@ module.exports = {
       'gray':{
         3:'#757575',
         4:'#585858',
-        5:'#828282'
+        5:'#828282',
+        2:'#757575'
       },
       'cyan':{
         1:'#2B788B',
