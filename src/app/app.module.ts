@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SprintComponent } from './sprint/sprint.component';
 import { RaceComponent } from './race/race.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RaceComponent } from './race/race.component';
     FooterComponent,
     HomepageComponent,
     SprintComponent,
-    RaceComponent
+    RaceComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

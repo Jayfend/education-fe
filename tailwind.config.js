@@ -9,18 +9,16 @@ module.exports = {
       },
       keyframes:{
         timeout:{
-          '0%':{width:'0px', height:'0px', opacity:0},
-          '50%':{width:'0px', height:'0px', opacity:0},
-          '50.1%':{width:'0px', height:'0px', opacity:1},
-          '75%':{width:'500px', height:'0px', opacity:1},
-          '100%':{width:'500px',height:'500px',opacity:1}
+          '0%':{},
+         
           
         }
       },
       animation:{
-        timeout:'timeout 3s infinite alternate'
+        timeout:'timeout 60s steps(10) infinite'
       }
     },
+    
     borderColor:{
       'gray':{
         1:'#E0E0E0',
@@ -42,6 +40,9 @@ module.exports = {
       },
       'pink':{
         1:'#A15993'
+      },
+      'green':{
+        1:'#639B6D'
       }
     },
     borderWidth:{
