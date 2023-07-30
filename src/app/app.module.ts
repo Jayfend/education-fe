@@ -9,6 +9,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SprintComponent } from './sprint/sprint.component';
 import { RaceComponent } from './race/race.component';
 import { ResultComponent } from './result/result.component';
+import { AudioComponent } from './audio/audio.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ResultComponent } from './result/result.component';
     HomepageComponent,
     SprintComponent,
     RaceComponent,
-    ResultComponent
+    ResultComponent,
+    AudioComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

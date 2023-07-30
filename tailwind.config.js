@@ -39,7 +39,8 @@ module.exports = {
         1:'#A95151'
       },
       'pink':{
-        1:'#A15993'
+        1:'#A15993',
+        2:'#F2D4DC'
       },
       'green':{
         1:'#639B6D'
@@ -77,7 +78,8 @@ module.exports = {
       },
       'pink':{
         1:'#A15993',
-        2:'#945069'
+        2:'#945069',
+        3:'#F2D4DC'
       }
     },
     backgroundColor:{
@@ -100,6 +102,11 @@ module.exports = {
       },
       'orange':{
         1:'#CB5B43'
+      }
+    },
+    placeholderColor:{
+      'cyan':{
+        1:'#2B788B'
       }
     }
   },

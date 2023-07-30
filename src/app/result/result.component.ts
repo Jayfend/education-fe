@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class ResultComponent {
   resultImg1:any="./assets/Imgs/books.png"
   resultImg2:any="./assets/Imgs/replay.png"
+  resultImg3:any="./assets/Imgs/play.png"
 }
