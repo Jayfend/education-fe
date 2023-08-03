@@ -12,7 +12,10 @@ import { ResultComponent } from './result/result.component';
 import { AudioComponent } from './audio/audio.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastNotifyComponent } from './toast-notify/toast-notify.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +27,17 @@ import { LoginComponent } from './login/login.component';
     ResultComponent,
     AudioComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ToastNotifyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

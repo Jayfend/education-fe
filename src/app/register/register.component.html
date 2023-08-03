@@ -8,42 +8,47 @@
     <div class="w-[308px]"><span class="text-black-1 font-mont text-base font-normal">You can   </span><span class="text-cyan-3 text-base font-mont font-semibold hover:text-cyan-2 cursor-pointer" routerLink="/login" >Login here !</span></div>
 
 
-    <form class="mt-[20px]">
+    <form class="mt-[20px]" [formGroup]="checkoutForm"  (ngSubmit)="submitForm()" >
 
       <div class="w-[429px] h-16 relative">
-        <div class="left-0 top-0 absolute text-cyan-1 text-[13px] font-medium font-mont">Email</div>
-        <input class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your email">
+        <div class="left-0 top-0 absolute text-cyan-1 text-[13px] font-medium font-mont">User Name</div>
+        <input required formControlName ="userName"
+         class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your user name">
         <div class="w-[429px] h-0.5 left-0 top-[62px] absolute bg-cyan-2"></div>
         <img class="w-[17px] h-[17px] left-0 top-[35px] absolute origin-top-left" [src] ="registerImg1">
       </div>
       <div class="w-[429px] h-16 relative mt-[20px]">
-        <div class="left-0 top-0 absolute text-cyan-1 text-[13px] font-medium font-mont">UserName</div>
-        <input class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your user name">
+        <div class="left-0 top-0 absolute text-cyan-1 text-[13px] font-medium font-mont" email >Email</div>
+        <input type="text" required formControlName ="email"
+        class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your email">
         <div class="w-[429px] h-0.5 left-0 top-[62px] absolute bg-cyan-2"></div>
         <img class="w-[17px] h-[17px] left-0 top-[35px] absolute origin-top-left" [src] ="registerImg2">
       </div>
       <div class="w-[429px] h-16 relative mt-[20px]">
         <div class="left-0 top-0 absolute text-cyan-1 text-[13px] font-medium font-mont">Password</div>
-        <input class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your password">
+        <input required formControlName ="password"
+        class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your password">
         <div class="w-[429px] h-0.5 left-0 top-[62px] absolute bg-cyan-2"></div>
         <img class="w-[17px] h-[17px] left-0 top-[35px] absolute origin-top-left" [src] ="registerImg3">
       </div>
       <div class="w-[429px] h-16 relative mt-[20px]">
         <div class="left-0 top-0 absolute text-cyan-1 text-[13px] font-medium font-mont">Confirm Password</div>
-        <input class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your confirm password">
+        <input required formControlName ="confirmPassword"
+         class="placeholder-cyan-1 left-[27px] top-[31px] w-[405px] absolute text-cyan-1 font-mont text-base font-normal focus:border-transparent focus:outline-none focus:ring-0" placeholder="Enter your confirm password">
         <div class="w-[429px] h-0.5 left-0 top-[62px] absolute bg-cyan-2"></div>
         <img class="w-[17px] h-[17px] left-0 top-[35px] absolute origin-top-left" [src] ="registerImg4">
       </div>
-      <div class="w-[429px] h-[53px] bg-cyan-1 rounded-[32px] shadow flex mt-[40px]">
-        <div class="text-white-1 text-[17px] font-mont font-medium mx-[175px] my-[14px]">Register</div>
+      <div class="group w-[429px] h-[53px] cursor-pointer">
+      <button class="w-[429px] h-[53px] bg-cyan-1 rounded-[32px] shadow flex mt-[40px] group-hover:bg-cyan-2" type="submit">
+        <div class="text-white-1 text-[17px] font-mont font-medium mx-[175px] my-[14px] group-hover:text-cyan-1">Register</div>
+      </button>
       </div>
-
     </form>
 
 
 </div>
-   <div class="w-[735px] rounded-r-[12px] bg-cyan-2 ml-[90px] flex-col flex items-center">
-     <img [src]="registerImg5" >
+   <div class="w-[735px] rounded-r-[12px] bg-cyan-2 ml-[90px] flex-col flex items-center ">
+     <img  class=" relative bottom-[30px]" [src]="registerImg5" >
   
   </div>
 

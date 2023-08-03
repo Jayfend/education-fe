@@ -1,0 +1,27 @@
+<div [@fadeOutRight]="(toast.close$ | async)" [class]="(toast.toastState$ | async)" *ngIf="(toast.showsToast$ | async)"  class="fixed items-center w-[400px]  p-4 text-cyan-1  rounded-lg shadow top-[60px] right-5 animate-fade-left  ">
+    
+    <div class="inline-flex ml-[20px] items-center ">
+        <img [src]="successImg" class=" w-[40xpx] h-[40px] object-fit: cover" *ngIf="(toast.toastState$ | async)=='bg-cyan-4'">
+        <img [src]="alertImg" class=" w-[40xpx] h-[40px] object-fit: cover" *ngIf="(toast.toastState$ | async)=='bg-yellow-2'">
+        <img [src]="errorImg" class=" w-[40xpx] h-[40px] object-fit: cover" *ngIf="(toast.toastState$ | async)=='bg-pink-2'">
+        <div class="inline-flex w-[200px] ">
+            <div class="ml-[30px]  flex-col flex"  *ngIf="(toast.toastState$ | async)=='bg-cyan-4'">
+                <div class=" font-mont text-cyan-1 font-bold text-[18px] break-words">{{toast.toastMessage$ | async}}</div>
+                <div class="text-cyan-1 text-sm font-normal leading-normal">{{moment().format('YYYY-MM-DD HH:mm')}}</div>
+            </div>
+            <div class="ml-[30px]  flex-col flex" *ngIf="(toast.toastState$ | async)=='bg-yellow-2'">
+                <div class=" font-mont text-yellow-2 font-bold text-[18px] break-words">{{toast.toastMessage$ | async}}</div>
+                <div class="text-yellow-2 text-sm font-normal leading-normal">{{moment().format('YYYY-MM-DD HH:mm')}}</div>
+            </div>
+            <div class="ml-[30px]  flex-col flex" *ngIf="(toast.toastState$ | async)=='bg-pink-2'">
+                <div class=" font-mont text-orange-1 font-bold text-[18px] break-words">{{toast.toastMessage$ | async}}</div>
+                <div class="text-orange-1 text-sm font-normal leading-normal">{{moment().format('YYYY-MM-DD HH:mm')}}</div>
+            </div>
+         
+        </div>
+        <button class="ml-[100px] w-[12px] h-[12px] "(click)="toggleVisibility()"><img [src]="closeImg" class=""> </button>
+ 
+    </div>
+
+</div>
+

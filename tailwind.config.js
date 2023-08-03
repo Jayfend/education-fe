@@ -8,15 +8,15 @@ module.exports = {
         'mont':['Montserrat','sans-serif']
       },
       keyframes:{
-        timeout:{
-          '0%':{},
-         
+        fadeOut:{
+          '0%':{opacity: 1},
+          '100%':{opacity:0}
           
         }
       },
       animation:{
-        timeout:'timeout 60s steps(10) infinite'
-      }
+        fadeOut:'fadeOut 5s ease-out forwards',
+      },
     },
     
     borderColor:{
@@ -44,6 +44,9 @@ module.exports = {
       },
       'green':{
         1:'#639B6D'
+      },
+      'black':{
+        1:'#000000'
       }
     },
     borderWidth:{
@@ -59,7 +62,8 @@ module.exports = {
       'cyan':{
         1:'#2B788B',
         2:'#C3DCE3',
-        3:'#5996A5'
+        3:'#5996A5',
+        4:'#D9EADB'
       },
       'black':{
         1:'#000000'
@@ -68,13 +72,15 @@ module.exports = {
         1:'#FFFFFF',
       },
       'yellow':{
-        1:'#C4A24C'
+        1:'#C4A24C',
+        2:'#FD8D14'
       },
       'orange':{
         1:'#CB5B43'
       },
       'red':{
-        1:'#A95151'
+        1:'#A95151',
+        2:'#FE0000'
       },
       'pink':{
         1:'#A15993',
@@ -91,14 +97,21 @@ module.exports = {
         2:'#E0E0E0'
       },
       'black':{
-        1:'#000000'
+        1:'#000000',
+       
       },
       'cyan':{
         1:'#2B788B',
-        2:'#C3DCE3'
+        2:'#C3DCE3',
+        4:'#D9EADB'
       },
       'pink':{
-        1:'#F2D4DC'
+        1:'#F2D4DC',
+        2:'#FFD1DA'
+      },
+      'yellow':{
+        1:'#FFDBAA',
+        2:'#FFE17B'
       },
       'orange':{
         1:'#CB5B43'
@@ -110,6 +123,6 @@ module.exports = {
       }
     }
   },
-  plugins: [],
+  plugins: [ require('tailwindcss-animated')],
 }
 
