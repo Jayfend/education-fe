@@ -47,6 +47,9 @@ module.exports = {
       },
       'black':{
         1:'#000000'
+      },
+      'transparent':{
+        1:'#ffffff'
       }
     },
     borderWidth:{
@@ -123,6 +126,6 @@ module.exports = {
       }
     }
   },
-  plugins: [ require('tailwindcss-animated')],
+  plugins: [ require("@tailwindcss/forms"),require('tailwindcss-animated')],
 }
 

@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="inline-flex  items-center w-[197px] h-[40px] ">
-        <div class="inline-flex justify-start items-center">
+        <div class="inline-flex justify-start items-center" *ngIf="checkToken()">
           <div
             class="w-[41px] h-10 px-3.5 py-[9px] bg-cyan-2 rounded-[100px] justify-center items-center gap-3.5 inline-flex cursor-pointer"
           >
@@ -57,13 +57,23 @@
             Alex
           </div>
         </div>
-        <div class="inline-flex justify-start items-center h-[40px] ml-[30px]" >
-          <span routerLink="/register"
+        <div class="w-[106px] h-11 px-[22px] py-3.5 bg-cyan-1 rounded-[100px] justify-start items-start gap-2.5 inline-flex"  *ngIf="checkToken() == false">
+          <div class="text-white-1 font-mont text-base font-bold leading-none whitespace-nowrap">Sign Up</div>
+        </div>
+        <button class="inline-flex justify-start items-center h-[40px] ml-[30px]" *ngIf="checkToken()" type="button" (click)="signOut()" >
+          <span 
           class="text-black font-bold leading-none font-mont text-[16px] p-50 mt-[3px] whitespace-nowrap cursor-pointer hover:text-cyan-1 hover:underline"
         >
           Sign Out →
         </span>
-      </div>
+      </button>
+      <button class="inline-flex justify-start items-center h-[40px] ml-[30px]" *ngIf="checkToken() == false" >
+        <span routerLink="/login"
+        class="text-black font-bold leading-none font-mont text-[16px] p-50 mt-[3px] whitespace-nowrap cursor-pointer hover:text-cyan-1 hover:underline"
+      >
+        Sign In →
+      </span>
+    </button>
        
       </div>
   </nav>

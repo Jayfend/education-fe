@@ -16,6 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastNotifyComponent } from './toast-notify/toast-notify.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtModule } from "@auth0/angular-jwt";
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +40,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
-    
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["https://localhost:7070"],
+        // disallowedRoutes: ["http://example.com/examplebadroute/"],
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

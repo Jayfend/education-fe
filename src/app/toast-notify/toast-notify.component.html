@@ -1,4 +1,4 @@
-<div [@fadeOutRight]="(toast.close$ | async)" [class]="(toast.toastState$ | async)" *ngIf="(toast.showsToast$ | async)"  class="fixed items-center w-[400px]  p-4 text-cyan-1  rounded-lg shadow top-[60px] right-5 animate-fade-left  ">
+<div [@fadeOutRight]="(toast.close$ | async)" [class]="(toast.toastState$ | async)" *ngIf="(toast.showsToast$ | async)"   class="fixed items-center w-[400px]  p-4 text-cyan-1  rounded-lg shadow top-[60px] right-5 animate-fade-left  ">
     
     <div class="inline-flex ml-[20px] items-center ">
         <img [src]="successImg" class=" w-[40xpx] h-[40px] object-fit: cover" *ngIf="(toast.toastState$ | async)=='bg-cyan-4'">
@@ -19,7 +19,9 @@
             </div>
          
         </div>
-        <button class="ml-[100px] w-[12px] h-[12px] "(click)="toggleVisibility()"><img [src]="closeImg" class=""> </button>
+        <button class="ml-[100px] fixed w-[12px] h-[12px] left-[260px] "(click)="toggleVisibility()">
+            <img [src]="closeImg" class=" cursor-pointer"> 
+        </button>
  
     </div>
 

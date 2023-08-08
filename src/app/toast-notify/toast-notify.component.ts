@@ -26,11 +26,13 @@ export class ToastNotifyComponent  {
   
  
   toggleVisibility() {
+    console.log('click');
+  
       this.toast.closeToast();
       setTimeout(() => {
         this.toast.dismissToast();
       }, 900);
-      
+     
     
 
   }
