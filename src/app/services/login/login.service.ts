@@ -27,4 +27,10 @@ export class LoginService {
 
     return this.http.post(this.apiUrl+"/connect/token", body.toString(), { headers });
   }
+  getUserInfo():Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization': "Bearer " +localStorage.getItem("access_token"),
+    });
+    return this.http.get(this.apiUrl+"/connect/userinfo",{headers});
+  }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { TOAST_STATE, ToastService } from '../services/toast/toast.service';
+import { LoginService } from '../services/login/login.service';
+import { UserInfoRes } from 'src/models/login/userinfores';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,7 +12,9 @@ import { TOAST_STATE, ToastService } from '../services/toast/toast.service';
 export class HeaderComponent implements OnInit {
   showOption:boolean = false;
   headerImg:any="./assets/Imgs/Frame 8.png"
-  constructor(private jwtHelper: JwtHelperService,private router: Router,private toast: ToastService) { }
+  userName: string =""
+  firstLetter: string =""
+  constructor(private jwtHelper: JwtHelperService,private router: Router,private toast: ToastService, private loginService: LoginService) { }
 
   ngOnInit() {
     if (this.jwtHelper.isTokenExpired(localStorage.getItem('access_token'))) {
@@ -22,6 +26,9 @@ export class HeaderComponent implements OnInit {
   }
    checkToken(){
     if(localStorage.getItem('access_token') != null){
+     this.userName = localStorage.getItem('current_user');
+     console.log(this.userName);
+     this.firstLetter = Array.from(this.userName)[0].toString();
       return true;
     }
     else{

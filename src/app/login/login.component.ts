@@ -3,6 +3,8 @@ import { FormBuilder,FormGroup, Validators, AbstractControl, ValidationErrors } 
 import { TOAST_STATE, ToastService } from '../services/toast/toast.service';
 import { LoginService } from '../services/login/login.service';
 import { LogintokenResponse } from 'src/models/login/logintokenres';
+import { UserInfoRes } from 'src/models/login/userinfores';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +17,9 @@ export class LoginComponent implements OnInit {
   registerImg3:any="./assets/Imgs/password.png"
   registerImg4:any="./assets/Imgs/password.png"
   registerImg5:any="./assets/Imgs/laptop.png"
-  constructor( private formBuilder: FormBuilder,private toastService: ToastService, private loginService:LoginService){}
+  password: string = '';
+  
+  constructor( private formBuilder: FormBuilder,private toastService: ToastService, private loginService:LoginService, private router :Router){}
 
 ngOnInit() {
   this.checkoutForm = this.formBuilder.group({
@@ -44,8 +48,21 @@ submitForm() {
         next: (res:LogintokenResponse)=>{
           const accessToken = res.access_token;
           localStorage.setItem('access_token', accessToken);
-          console.log('Token saved:', accessToken);
+         
+
           this.toastService.showToast(TOAST_STATE.success,"Đăng nhập thành công");
+          this.loginService.getUserInfo().subscribe({
+            next: (res:UserInfoRes)=>{
+              var userName = res.name;
+          
+              localStorage.setItem('current_user', userName);
+            },
+            error: (res:any)=>{
+              
+             
+            }
+          })
+          this.router.navigate([''])
         },
         error: (res:any)=>{
           console.log(res);
